@@ -12,7 +12,7 @@ app.get('/verify/:id', async (req, res) => {
 });
 
 app.get('/*', async (req, res) => {
-  return res.sendFile("view/verify.html");
+  return res.sendFile("view/verify.html", {root: __dirname});
 });
 
 async function main() {

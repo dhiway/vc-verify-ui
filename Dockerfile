@@ -10,6 +10,8 @@ RUN yarn
 COPY . .
 RUN yarn build
 
+COPY view dist/
+
 EXPOSE 5002
 
 CMD ["node", "dist/index.js"]

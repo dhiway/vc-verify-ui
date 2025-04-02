@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <div id="table of content">
+      This page should contain the table of content
+    </div>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each content}}
+           <tr>
+               <td>{{@key}}</td>	  
+               <td>
+                    {{#if (isObject this)}}
+                        {{json this}}
+                    {{else}}
+                        {{this}}
+                    {{/if}}
+               </td>
+            </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>
