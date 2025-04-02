@@ -1,1 +1,37 @@
-<html><body>Verify Page (InputTextBox comes here) </body</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Page</title>
+</head>
+
+<body>
+
+    <h3>Enter ID to Verify</h3>
+
+    <input type="text" id="idInput" placeholder="Enter ID" maxlength="100">
+    <button id="checkButton" disabled>Check</button>
+
+    <script>
+        const input = document.getElementById('idInput');
+        const button = document.getElementById('checkButton');
+
+        input.addEventListener('input', () => {
+            const value = input.value;
+            const isValid = value.length > 4 && value.length <= 100 && !/\s/.test(value);
+            button.disabled = !isValid;
+        });
+
+        button.addEventListener('click', () => {
+            const value = input.value;
+            if (value.length > 4 && value.length <= 100 && !/\s/.test(value)) {
+                window.location.href = `/verify/${encodeURIComponent(value)}`;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
