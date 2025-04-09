@@ -1,9 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Credential Not Found</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .message-box {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-left: 5px solid #e74c3c;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        color: #333;
+      }
+
+      .message-box strong {
+        color: #e74c3c;
+      }
+    </style>
+  </head>
   <body>
-    <div>
-      The Credential doesn't exist. Did you mention the proper ID?
-      <br/>
-      Please check the `id` field in the Verifiable Credential you received.
+    <div class="message-box">
+      <strong>The Credential doesn't exist.</strong><br />
+      Did you mention the proper Identifier?<br /><br />
+      Please check the <code>Identifier</code> field in the Verifiable
+      Credential you received.
     </div>
   </body>
 </html>
