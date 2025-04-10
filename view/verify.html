@@ -37,9 +37,10 @@
         width: 95%;
         border: 1px solid #cbd5e0;
         border-radius: 8px;
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.1rem;
         font-size: 1rem;
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        
       }
 
       button {
@@ -77,13 +78,31 @@
         color: #333;
         display: none;
       }
+      .example-id {
+        font-size: 0.65rem;
+        color: #6b705c;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: left;
+        margin-bottom: 1.2rem;
+        background-color: #fffaf0;
+        padding: 0.75rem;
+        border-left: 4px solid #dda15e;
+        border-radius: 4px;
+        word-break: break-word;
+      }
     </style>
   </head>
 
   <body>
     <div class="form-container">
       <h3>Enter ID to Verify</h3>
-      <input type="text" id="idInput" placeholder="Enter ID" maxlength="100" />
+      <input type="text" id="idInput" placeholder="Enter ID" />
+      <p class="example-id">
+        Example:
+        <code
+          >stmt:cord:s3bzNxTLsCB5neE6yZ4hZ9NBYYwt53SNKpMKAGXKpKEDNC98x:adfe3a9afabc4ed98ee55bcb5c5eb3c109a9c2c03ef0f77e79a2b73e4e258d59</code
+        >
+      </p>
       <button id="checkButton" disabled>Check</button>
     </div>
 
@@ -94,13 +113,13 @@
       input.addEventListener('input', () => {
         const value = input.value;
         const isValid =
-          value.length > 4 && value.length <= 100 && !/\s/.test(value);
+          value.length > 4 && value.length <= 125 && !/\s/.test(value);
         button.disabled = !isValid;
       });
 
       button.addEventListener('click', () => {
         const value = input.value;
-        if (value.length > 4 && value.length <= 100 && !/\s/.test(value)) {
+        if (value.length > 4 && value.length <= 125 && !/\s/.test(value)) {
           window.location.href = `/verify/${encodeURIComponent(value)}`;
         }
       });
