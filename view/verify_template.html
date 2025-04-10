@@ -1,8 +1,81 @@
 <html>
+  <head>
+    <title>Credential Verification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      #table-of-content {
+        background-color: #4a90e2;
+        color: white;
+        padding: 1rem 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        max-width: 900px;
+      }
+
+      table {
+        width: 100%;
+        max-width: 900px;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        border: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      thead {
+        background-color: #f2f2f2;
+      }
+
+      th {
+        background-color: #e6f0ff;
+        color: #333;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f1f7ff;
+      }
+
+      p {
+        margin-top: 2rem;
+        background-color: #efefef;
+        padding: 1rem;
+        border-left: 4px solid #4a90e2;
+        font-family: monospace;
+        white-space: pre-wrap;
+        word-break: break-word;
+        width: 100%;
+        max-width: 900px;
+      }
+    </style>
+  </head>
   <body>
-    <div id="table of content">
-      This page should contain the table of content
-    </div>
+    <h1>Credential Verification</h1>
 
     <table border="1">
       <thead>
@@ -13,18 +86,15 @@
       </thead>
       <tbody>
         {{#each content}}
-           <tr>
-               <td>{{@key}}</td>	  
-               <td>
-                    {{#if (isObject this)}}
-                        {{json this}}
-                    {{else}}
-                        {{this}}
-                    {{/if}}
-               </td>
-            </tr>
+        <tr>
+          <td>{{@key}}</td>
+          <td>
+            {{#if (isObject this)}} {{json this}} {{else}} {{this}} {{/if}}
+          </td>
+        </tr>
         {{/each}}
       </tbody>
     </table>
+    <!-- <p>{{json vc}}</p> -->
   </body>
 </html>

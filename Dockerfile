@@ -10,7 +10,7 @@ RUN yarn
 COPY . .
 RUN yarn build
 
-COPY view dist/
+COPY view dist/view
 
 EXPOSE 5002
 
